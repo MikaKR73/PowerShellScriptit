@@ -3,6 +3,8 @@ Add-Type -AssemblyName System.Windows.Forms
 # Tyhjennä PowerShell-ikkuna
 Clear-Host
 
+Write-Host "Valitse kansiot ja ohjelma aloittaa pakkaamisen."
+
 function Select-FolderDialog {
     param (
         [string]$Description = "Valitse kansio",
@@ -40,7 +42,7 @@ if ($sourceFolder) {
         Write-Host -ForegroundColor "red" "Tallennuskansiota ei valittu."
     }
 } else {
-    Write-Host -ForegroundColor "red""Kansiota ei valittu."
+    Write-Host -ForegroundColor "red" "Kansiota ei valittu."
 }
 
 Start-Sleep -Seconds 5
@@ -66,3 +68,5 @@ Rename-Item -Path $filePath -NewName $newFileName
 Clear-Host
 
 Write-Host "Tiedosto nimetty uudelleen: $newFilePath"
+Write-Host ""
+Read-Host -Prompt "Paina Enter sulkeaksesi ikkunan"
