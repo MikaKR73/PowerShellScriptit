@@ -40,9 +40,15 @@ if ($sourceFolder) {
         Write-Host -ForegroundColor "green" "Kansio '$sourceFolder' pakattiin onnistuneesti tiedostoon '$zipFileName'."
     } else {
         Write-Host -ForegroundColor "red" "Tallennuskansiota ei valittu."
+		Write-Host ""
+		Read-Host -Prompt "Paina Enter sulkeaksesi ikkunan"
+		exit
     }
 } else {
     Write-Host -ForegroundColor "red" "Kansiota ei valittu."
+	Write-Host ""
+	Read-Host -Prompt "Paina Enter sulkeaksesi ikkunan"
+	exit
 }
 
 Start-Sleep -Seconds 5
